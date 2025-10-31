@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { 
   CodeBracketIcon, 
   DevicePhoneMobileIcon, 
@@ -6,7 +6,6 @@ import {
   EnvelopeIcon,
   PhoneIcon,
   MapPinIcon,
-  PlayCircleIcon,
   ChevronDownIcon
 } from '@heroicons/react/24/outline';
 
@@ -547,7 +546,7 @@ const App = () => {
                   <label htmlFor="message" className="block text-gray-300 mb-2">Your Message</label>
                   <textarea 
                     id="message" 
-                    rows="4"
+                    rows={4}
                     className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:border-cyan-500 transition-colors duration-300"
                     placeholder="Tell me about your project..."
                   ></textarea>
@@ -573,24 +572,26 @@ const App = () => {
         </div>
       </footer>
 
-      <style jsx>{`
-        @keyframes gradient {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
-        }
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .animate-gradient {
-          background-size: 200% 200%;
-          animation: gradient 6s ease infinite;
-        }
-        .animate-marquee {
-          animation: marquee 30s linear infinite;
-        }
-      `}</style>
+      <style>
+        {`
+          @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+          }
+          @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .animate-gradient {
+            background-size: 200% 200%;
+            animation: gradient 6s ease infinite;
+          }
+          .animate-marquee {
+            animation: marquee 30s linear infinite;
+          }
+        `}
+      </style>
     </div>
   );
 };
